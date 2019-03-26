@@ -8,7 +8,7 @@ mkdir -p /out/processing
 
 mkdir -p /root/.biglybt
 
-# if we have a BiglyBT config file (/config/biglybt.config) use it
+# if we have a new BiglyBT config file (/config/biglybt.config) use it
 if [ -r /config/biglybt.config ]; then
   cp /config/biglybt.config /root/.biglybt/
 fi
