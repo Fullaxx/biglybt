@@ -26,8 +26,8 @@ echo "/usr/local/biglybt/biglybt &" >> /root/.config/openbox/autostart && \
 rm /app/BiglyBT_Installer.sh
 
 # ------------------------------------------------------------------------------
-# Configure BiglyBT
-COPY conf/biglybt.config /root/.biglybt/
+# Provide default BiglyBT config
+COPY conf/biglybt.config /usr/share/biglybt/biglybt.config.default
 
 # ------------------------------------------------------------------------------
 # Install startup scripts

@@ -16,9 +16,10 @@ Output: Your downloads will reside in /srv/docker/biglybt/out/complete/
 ```
 -v /srv/docker/biglybt/out:/out
 ```
-Configuration: Any .ovpn files must be placed in /srv/docker/biglybt/openvpn/
+Configuration: Any .ovpn files must be placed in /srv/docker/biglybt/config/ \
+Also, if biglybt.config is found in /config, it will be copied to /root/.biglybt/ and used
 ```
--v /srv/docker/biglybt/openvpn:/openvpn
+-v /srv/docker/biglybt/config:/config
 ```
 ## BiglyBT Dir Tree
 ```
@@ -53,14 +54,14 @@ Default: No Authentication
 -e VNCPASS='vncpass' -e VNCPASSRO='readonly'
 ```
 ## OpenVPN Options
-Optional: Wait 5 seconds for openvpn to initiate and connect before moving on \
-Default: 3 seconds
+Optional: Wait 9 seconds for openvpn to initiate and connect before moving on \
+Default: 5 seconds
 ```
--e OVPNSLEEPTIME='5'
+-e OVPNSLEEPTIME='9'
 ```
 Use the file *myconnection.ovpn* to connect to an openvpn service \
 Default behavior is that openvpn will not run \
-Any .ovpn files must be placed in your openvpn volume (/srv/docker/biglybt/openvpn/)
+Any .ovpn files must be placed in your openvpn volume (/srv/docker/biglybt/config/)
 ```
 -e OVPNCFG='myconnection.ovpn'
 ```
@@ -74,15 +75,15 @@ docker run -d \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
 Run the image with OpenVPN \
-Make sure that your *myconnection.ovpn* file exists in /srv/docker/biglybt/openvpn/
+Make sure that your *myconnection.ovpn* file exists in /srv/docker/biglybt/config/
 ```
 docker run -d --cap-add=NET_ADMIN --device /dev/net/tun \
 -e OVPNCFG='myconnection.ovpn' \
--e OVPNSLEEPTIME='5' \
+-e OVPNSLEEPTIME='9' \
 -v /srv/docker/biglybt/data:/root/.biglybt \
 -v /srv/docker/biglybt/in:/in \
 -v /srv/docker/biglybt/out:/out \
--v /srv/docker/biglybt/openvpn:/openvpn \
+-v /srv/docker/biglybt/config:/config \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
 ## Connect using vncviewer
