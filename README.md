@@ -54,6 +54,14 @@ Any .ovpn files must be placed in your openvpn volume (/srv/docker/biglybt/openv
 -e OVPNCFG='myconnection.ovpn'
 ```
 ## Run the image
+Run the image without OpenVPN
+```
+docker run -d \
+-v /srv/docker/biglybt/data:/root/.biglybt \
+-v /srv/docker/biglybt/in:/in \
+-v /srv/docker/biglybt/out:/out \
+-p 127.0.0.1:5901:5901 fullaxx/biglybt
+```
 Run the image with OpenVPN \
 Make sure that your myconnection.ovpn exists in /srv/docker/biglybt/openvpn/
 ```
