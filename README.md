@@ -3,10 +3,15 @@
 ## Base Docker Image
 [fullaxx/ubuntu-desktop](https://hub.docker.com/r/fullaxx/ubuntu-desktop)
 
+## Software
+[BiglyBT](https://www.biglybt.com/) - An java-based bittorrent application
+[openvpn](https://openvpn.net/)
+
 ## Get the image from Docker Hub
 ```
 docker pull fullaxx/biglybt
 ```
+
 ## Volume Options
 Input: Drop your torrents/magnets in /srv/docker/biglybt/in/autoload/
 ```
@@ -21,6 +26,7 @@ Also, if biglybt.config is found in /config, it will be copied to /root/.biglybt
 ```
 -v /srv/docker/biglybt/config:/config
 ```
+
 ## BiglyBT Dir Tree
 ```
 /in
@@ -32,6 +38,7 @@ Also, if biglybt.config is found in /config, it will be copied to /root/.biglybt
 |-- torrents - BiglyBT will move torrent files of finished downloads here
 `-- processing - BiglyBT will use this for processing incomplete downloads
 ```
+
 ## VNC Options
 Optional: Set Depth 16 \
 Default: 24
@@ -53,6 +60,7 @@ Default: No Authentication
 ```
 -e VNCPASS='vncpass' -e VNCPASSRO='readonly'
 ```
+
 ## OpenVPN Options
 Optional: Wait 9 seconds for openvpn to initiate and connect before moving on \
 Default: 5 seconds
@@ -65,6 +73,7 @@ Any .ovpn files must be placed in your openvpn volume (/srv/docker/biglybt/confi
 ```
 -e OVPNCFG='myconnection.ovpn'
 ```
+
 ## Run the image
 Run the image without OpenVPN
 ```
@@ -86,10 +95,12 @@ docker run -d --cap-add=NET_ADMIN --device /dev/net/tun \
 -v /srv/docker/biglybt/config:/config \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
+
 ## Connect using vncviewer
 ```
 vncviewer 127.0.0.1:5901
 ```
+
 ## Build it locally using the github repository
 ```
 docker build -t="fullaxx/biglybt" github.com/fullaxx/biglybt
