@@ -8,7 +8,7 @@
 docker pull fullaxx/biglybt
 ```
 ## Volume Options
-Input: Drop your torrents in /srv/docker/biglybt/in/autoload/
+Input: Drop your torrents/magnets in /srv/docker/biglybt/in/autoload/
 ```
 -v /srv/docker/biglybt/in:/in
 ```
@@ -20,7 +20,7 @@ Configuration: Any .ovpn files must be placed in /srv/docker/biglybt/openvpn/
 ```
 -v /srv/docker/biglybt/openvpn:/openvpn
 ```
-## BiglyBT File Tree
+## BiglyBT Dir Tree
 ```
 /in
 |-- autoload - Drop your torrents/magnets here
