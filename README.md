@@ -20,6 +20,17 @@ Configuration: Any .ovpn files must be placed in /srv/docker/biglybt/openvpn/
 ```
 -v /srv/docker/biglybt/openvpn:/openvpn
 ```
+## BiglyBT File Tree
+```
+/in
+|-- autoload - Drop your torrents/magnets here
+`-- torrents - BiglyBT will move torrent files here after autoload input
+
+/out
+|-- complete - Downloads will be moved here
+|-- torrents - Finished torrent files will be moved here
+`-- processing - BiglyBT will use this for processign session data
+```
 ## VNC Options
 Optional: Set Depth 16 \
 Default: 24

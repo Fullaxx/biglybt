@@ -23,7 +23,7 @@ RUN wget -q https://files.biglybt.com/installer/BiglyBT_Installer.sh \
 USER="root" /app/BiglyBT_Installer.sh -q && \
 echo >> /root/.config/openbox/autostart && \
 echo "/usr/local/biglybt/biglybt &" >> /root/.config/openbox/autostart && \
-mkdir -p /in/autoload /in/torrents /out/torrents /out/complete /out/processing
+rm /app/BiglyBT_Installer.sh
 
 # ------------------------------------------------------------------------------
 # Configure BiglyBT

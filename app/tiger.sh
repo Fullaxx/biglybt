@@ -27,6 +27,7 @@ fi
 /etc/init.d/x11-common start
 /etc/init.d/dbus start
 
+/app/dircheck.sh
 /app/openvpn.sh || bail "openvpn startup failed!"
 
 exec tigervncserver -fg -localhost no ${VNCAUTH} \
