@@ -63,7 +63,7 @@ docker run -d \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
 Run the image with OpenVPN \
-Make sure that your myconnection.ovpn exists in /srv/docker/biglybt/openvpn/
+Make sure that your *myconnection.ovpn* file exists in /srv/docker/biglybt/openvpn/
 ```
 docker run -d --cap-add=NET_ADMIN --device /dev/net/tun \
 -e OVPNCFG='myconnection.ovpn' \
