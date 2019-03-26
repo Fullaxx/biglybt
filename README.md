@@ -1,4 +1,4 @@
-# A small docker image running BiglyBT with openvpn
+# An Ubuntu docker image running BiglyBT with openvpn
 
 ## Base Docker Image
 [fullaxx/ubuntu-desktop](https://hub.docker.com/r/fullaxx/ubuntu-desktop)
