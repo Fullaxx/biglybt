@@ -37,6 +37,16 @@ Set Read-Write and Read-Only password
 ```
 -e VNCPASS='vncpass' -e VNCPASSRO='readonly'
 ```
+## OpenVPN Options
+Optional: Wait 4 seconds for openvpn to initiate and connect
+```
+-e OVPNSLEEPTIME='4'
+```
+Mandatory: use this file to connect to an openvpn service \
+Any .ovpn files must be placed in your openvpn volume (/srv/docker/biglybt/openvpn/)
+```
+-e OVPNCFG='myconnection.ovpn'
+```
 ## Run the image
 Run the image with OpenVPN \
 Make sure that your myconnection.ovpn exists in /srv/docker/biglybt/openvpn/
