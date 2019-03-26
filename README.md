@@ -47,8 +47,8 @@ Default: 3 seconds
 ```
 -e OVPNSLEEPTIME='5'
 ```
-Use this file to connect to an openvpn service \
-Default behavior is openvpn will not launch \
+Use the file *myconnection.ovpn* to connect to an openvpn service \
+Default behavior is that openvpn will not run \
 Any .ovpn files must be placed in your openvpn volume (/srv/docker/biglybt/openvpn/)
 ```
 -e OVPNCFG='myconnection.ovpn'
