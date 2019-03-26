@@ -21,28 +21,28 @@ Configuration: Any .ovpn files must be placed in /srv/docker/biglybt/openvpn/
 -v /srv/docker/biglybt/openvpn:/openvpn
 ```
 ## VNC Options
-Optional: Set Depth 16
+Optional: Set Depth 16 \
 Default: 24
 ```
 -e VNCDEPTH='16'
 ```
-Optional: Set 1920x1080 Resolution
+Optional: Set 1920x1080 Resolution \
 Default: 1280x800
 ```
 -e VNCRES='1920x1080'
 ```
-Optional: Set Password Authentication
+Optional: Set Password Authentication \
 Default: No Authentication
 ```
 -e VNCPASS='vncpass'
 ```
-Optional: Set Read-Write and Read-Only password
+Optional: Set Read-Write and Read-Only password \
 Default: No Authentication
 ```
 -e VNCPASS='vncpass' -e VNCPASSRO='readonly'
 ```
 ## OpenVPN Options
-Optional: Wait 5 seconds for openvpn to initiate and connect before moving on
+Optional: Wait 5 seconds for openvpn to initiate and connect before moving on \
 Default: 3 seconds
 ```
 -e OVPNSLEEPTIME='5'
