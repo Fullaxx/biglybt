@@ -4,7 +4,7 @@
 [fullaxx/ubuntu-desktop](https://hub.docker.com/r/fullaxx/ubuntu-desktop)
 
 ## Software
-[BiglyBT](https://www.biglybt.com/) - An java-based bittorrent application
+[BiglyBT](https://www.biglybt.com/) - An java-based bittorrent application \
 [openvpn](https://openvpn.net/)
 
 ## Get the image from Docker Hub
@@ -103,5 +103,5 @@ vncviewer 127.0.0.1:5901
 
 ## Build it locally using the github repository
 ```
-docker build -t="fullaxx/biglybt" github.com/fullaxx/biglybt
+docker build -t="fullaxx/biglybt" github.com/Fullaxx/biglybt
 ```
