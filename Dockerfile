@@ -13,12 +13,12 @@ ENV LANG C
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       tree \
-      openjdk-8-jre-headless \
+      openjdk-11-jre-headless \
       libwebkitgtk-3.0-0 \
       libswt-gtk-3-jni \
       openvpn && \
     sed -e 's/^assistive_technologies/#assistive_technologies/' \
-      -i /etc/java-8-openjdk/accessibility.properties && \
+      -i /etc/java-11-openjdk/accessibility.properties && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
@@ -26,7 +26,7 @@ RUN apt-get update && \
 # Install BiglyBT
 RUN wget -q https://files.biglybt.com/installer/BiglyBT_Installer.sh \
       -O /app/BiglyBT_Installer.sh && chmod +x /app/BiglyBT_Installer.sh && \
-    USER="root" /app/BiglyBT_Installer.sh -q && \
+    USER="root" app_java_home="/usr/lib/jvm/java-11-openjdk-amd64/" /app/BiglyBT_Installer.sh -q && \
     echo >> /root/.config/openbox/autostart && \
     echo "/usr/local/biglybt/biglybt &" >> /root/.config/openbox/autostart && \
     rm /app/BiglyBT_Installer.sh
