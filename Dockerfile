@@ -13,6 +13,7 @@ ENV LANG C
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       tree \
+      tzdata \
       openjdk-11-jre-headless \
       libwebkitgtk-3.0-0 \
       libswt-gtk-3-jni \
