@@ -75,7 +75,8 @@ Any .ovpn files must be placed in your openvpn volume (/srv/docker/biglybt/confi
 ```
 
 ## TimeZone Configuration
-Set the timezone to be used inside the container
+Set the timezone to be used inside the container \
+Default: UTC
 ```
 -e TZ='Asia/Tokyo'
 -e TZ='Europe/London'
