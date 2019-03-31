@@ -77,11 +77,11 @@ Any .ovpn files must be placed in your openvpn volume (/srv/docker/biglybt/confi
 ## TimeZone Configuration
 Set the timezone to be used inside the container
 ```
--e TZ='Asia/Tokyo' \
--e TZ='Europe/London' \
--e TZ='America/Los_Angeles' \
--e TZ='America/Denver' \
--e TZ='America/Chicago' \
+-e TZ='Asia/Tokyo'
+-e TZ='Europe/London'
+-e TZ='America/Los_Angeles'
+-e TZ='America/Denver'
+-e TZ='America/Chicago'
 -e TZ='America/New_York'
 ```
 

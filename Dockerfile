@@ -16,7 +16,6 @@ RUN apt-get update && \
       libwebkitgtk-3.0-0 \
       openjdk-11-jre-headless \
       openvpn \
-      sudo \
       tree \
       tzdata && \
     sed -e 's/^assistive_technologies/#assistive_technologies/' \
