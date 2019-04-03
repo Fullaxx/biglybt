@@ -60,6 +60,11 @@ Default: No Authentication
 ```
 -e VNCPASS='vncpass' -e VNCPASSRO='readonly'
 ```
+Optional: Run as a non-root user \
+Default: root (UID: 0)
+```
+-e VNCUSER='guest' -e VNCUID='1000'
+```
 
 ## OpenVPN Options
 Optional: Wait 9 seconds for openvpn to initiate and connect before moving on \
