@@ -22,7 +22,7 @@ Output: Your downloads will reside in /srv/docker/biglybt/out/complete/
 -v /srv/docker/biglybt/out:/out
 ```
 Configuration: Any .ovpn files must be placed in /srv/docker/biglybt/config/ \
-Also, if biglybt.config is found in /config, it will be copied to /root/.biglybt/ and used
+Also, if biglybt.config is found in /config, it will be copied to $HOME/.biglybt/ and used
 ```
 -v /srv/docker/biglybt/config:/config
 ```
@@ -87,10 +87,19 @@ Default: UTC
 ```
 
 ## Run the image
-Run the image without OpenVPN
+Run the image keeping your biglybt configuration
 ```
 docker run -d \
 -v /srv/docker/biglybt/data:/root/.biglybt \
+-v /srv/docker/biglybt/in:/in \
+-v /srv/docker/biglybt/out:/out \
+-p 127.0.0.1:5901:5901 fullaxx/biglybt
+```
+Run the image as a non-root user
+```
+docker run -d \
+-e VNCUSER='guest' -e VNCUID='1000' \
+-v /srv/docker/biglybt/data:/home/guest/.biglybt \
 -v /srv/docker/biglybt/in:/in \
 -v /srv/docker/biglybt/out:/out \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
@@ -101,7 +110,6 @@ Make sure that your *myconnection.ovpn* file exists in /srv/docker/biglybt/confi
 docker run -d --cap-add=NET_ADMIN --device /dev/net/tun \
 -e OVPNCFG='myconnection.ovpn' \
 -e OVPNSLEEPTIME='9' \
--v /srv/docker/biglybt/data:/root/.biglybt \
 -v /srv/docker/biglybt/in:/in \
 -v /srv/docker/biglybt/out:/out \
 -v /srv/docker/biglybt/config:/config \

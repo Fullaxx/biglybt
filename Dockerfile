@@ -16,8 +16,7 @@ RUN apt-get update && \
       libwebkitgtk-3.0-0 \
       openjdk-11-jre-headless \
       openvpn \
-      tree \
-      tzdata && \
+      tree && \
     sed -e 's/^assistive_technologies/#assistive_technologies/' \
       -i /etc/java-11-openjdk/accessibility.properties && \
     apt-get clean && \
@@ -28,8 +27,6 @@ RUN apt-get update && \
 RUN wget -q https://files.biglybt.com/installer/BiglyBT_Installer.sh \
       -O /app/BiglyBT_Installer.sh && chmod +x /app/BiglyBT_Installer.sh && \
     USER="root" app_java_home="/usr/lib/jvm/java-11-openjdk-amd64/" /app/BiglyBT_Installer.sh -q && \
-    echo >> /root/.config/openbox/autostart && \
-    echo "/usr/local/biglybt/biglybt &" >> /root/.config/openbox/autostart && \
     rm /app/BiglyBT_Installer.sh
 
 # ------------------------------------------------------------------------------
@@ -42,7 +39,6 @@ COPY app/*.sh /app/
 
 # ------------------------------------------------------------------------------
 # Identify Volumes
-VOLUME /root/.biglybt
 VOLUME /in
 VOLUME /out
 

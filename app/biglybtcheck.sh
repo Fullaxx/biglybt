@@ -5,15 +5,24 @@ mkdir -p /in/torrents
 mkdir -p /out/torrents
 mkdir -p /out/complete
 mkdir -p /out/processing
-
-mkdir -p /root/.biglybt
+mkdir -p ${HOME}/.biglybt
 
 # if we have a new BiglyBT config file (/config/biglybt.config) use it
 if [ -r /config/biglybt.config ]; then
-  cp /config/biglybt.config /root/.biglybt/
+  cp /config/biglybt.config ${HOME}/.biglybt/
 fi
 
 # if we have no config, use the default
-if [ ! -r /root/.biglybt/biglybt.config ]; then
-  cp /usr/share/biglybt/biglybt.config.default /root/.biglybt/biglybt.config
+if [ ! -r ${HOME}/.biglybt/biglybt.config ]; then
+  cp /usr/share/biglybt/biglybt.config.default ${HOME}/.biglybt/biglybt.config
+fi
+
+if ! grep '/usr/local/biglybt/biglybt' ${HOME}/.config/openbox/autostart ; then
+  echo >> ${HOME}/.config/openbox/autostart
+  echo "/usr/local/biglybt/biglybt &" >> ${HOME}/.config/openbox/autostart
+fi
+
+# /usr/local/biglybt is necessary for auto-update to work correctly
+if [ -n "${USER}" ]; then
+  chown -R ${USER}.${USER} ${HOME} /usr/local/biglybt /in /out
 fi
