@@ -48,4 +48,4 @@ EXPOSE 5901
 
 # ------------------------------------------------------------------------------
 # Define default command
-CMD ["/app/tiger.sh"]
+CMD ["/app/app.sh"]
