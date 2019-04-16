@@ -65,6 +65,16 @@ Default: root (UID: 0)
 ```
 -e VNCUSER='guest' -e VNCUID='1000'
 ```
+Optional: Set a custom group for non-root user \
+Default: same as VNCUSER and VNCUID
+```
+-e VNCGROUP='guests' -e VNCGID='1001'
+```
+Optional: Set umask to define permission for new files \
+Default: 0022
+```
+-e VNCUMASK='0002'
+```
 
 ## OpenVPN Options
 Optional: Wait 9 seconds for openvpn to initiate and connect before moving on \
@@ -104,6 +114,16 @@ Run the image as a non-root user
 ```
 docker run -d \
 -e VNCUSER='guest' -e VNCUID='1000' \
+-v /srv/docker/biglybt/data:/home/guest/.biglybt \
+-v /srv/docker/biglybt/in:/in \
+-v /srv/docker/biglybt/out:/out \
+-p 127.0.0.1:5901:5901 fullaxx/biglybt
+```
+Run the image as a non-root user with custom group
+```
+docker run -d \
+-e VNCUSER='guest' -e VNCUID='1000' \
+-e VNCGROUP='guests' -e VNCGID='1001' \
 -v /srv/docker/biglybt/data:/home/guest/.biglybt \
 -v /srv/docker/biglybt/in:/in \
 -v /srv/docker/biglybt/out:/out \
