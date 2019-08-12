@@ -4,7 +4,7 @@
 [fullaxx/ubuntu-desktop](https://hub.docker.com/r/fullaxx/ubuntu-desktop)
 
 ## Software
-[BiglyBT](https://www.biglybt.com/) - An java-based bittorrent application \
+[BiglyBT](https://www.biglybt.com/) - A java-based bittorrent application \
 [openvpn](https://openvpn.net/)
 
 ## Get the image from Docker Hub
