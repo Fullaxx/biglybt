@@ -101,6 +101,13 @@ Default: UTC
 -e TZ='America/New_York'
 ```
 
+## Shared Memory Modification (to support Web Browsers)
+Increase the size of shared memory to prevent web browsers from crashing
+Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-memory-size)
+```
+--shm-size 2g
+```
+
 ## Run the image
 Run the image keeping your biglybt configuration
 ```
