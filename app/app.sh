@@ -9,6 +9,10 @@ bail()
 source /app/imagestart.sh
 
 /app/biglybtcheck.sh
-/app/openvpn.sh || bail "openvpn startup failed!"
+
+if [ x"${OVPNCFG}" != "x" ]; then
+  /app/openvpn.sh || bail "openvpn startup failed!"
+  /app/monitor.sh &
+fi
 
 source /app/tiger.sh
