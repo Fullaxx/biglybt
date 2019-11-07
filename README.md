@@ -102,7 +102,7 @@ Default: UTC
 ```
 
 ## Shared Memory Modification (to support Web Browsers)
-Increase the size of shared memory to prevent web browsers from crashing
+Increase the size of shared memory to prevent web browsers from crashing \
 Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-memory-size)
 ```
 --shm-size 2g
