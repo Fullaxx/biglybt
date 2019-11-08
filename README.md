@@ -108,6 +108,13 @@ Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-
 --shm-size 2g
 ```
 
+## Persistant Configuration
+Examples of how to keep your configuration persistant
+```
+-v /srv/docker/biglybt/home/biglyby:/root/.biglyby
+-v /srv/docker/biglybt/home/mozilla:/root/.mozilla
+```
+
 ## Run the image
 Run the image keeping your biglybt configuration
 ```
