@@ -8,7 +8,7 @@ done
 
 sleep 2
 
-if [ -n ${LOGFILE} ]; then
+if [ -n "${LOGFILE}" ]; then
   TIMESTAMP=`date "+%y%m%d-%H%M%S"`
   echo "${TIMESTAMP}: MONITOR ACTIVATING KILLSWITCH" >> /out/${LOGFILE}
 
