@@ -12,11 +12,10 @@ ENV LANG C
 # Install prerequisites (openjdk,openvpn) and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      libswt-gtk-3-jni \
-      libwebkitgtk-3.0-0 \
       openjdk-11-jre-headless \
       openvpn \
-      tree && \
+      tree \
+      webkit2gtk-driver && \
     sed -e 's/^assistive_technologies/#assistive_technologies/' \
       -i /etc/java-11-openjdk/accessibility.properties && \
     apt-get clean && \
