@@ -24,5 +24,5 @@ fi
 
 # /usr/local/biglybt is necessary for auto-update to work correctly
 if [ -n "${USER}" ]; then
-  chown -R ${USER}.${USER} ${HOME} /usr/local/biglybt /in /out
+  chown -R ${USER}.${GROUP} ${HOME} /usr/local/biglybt /in /out
 fi
