@@ -146,7 +146,8 @@ docker run -d \
 Run the image with OpenVPN \
 Make sure that your *myconnection.ovpn* file exists in /srv/docker/biglybt/config/
 ```
-docker run -d --cap-add=NET_ADMIN --device /dev/net/tun \
+docker run -d \
+--cap-add=NET_ADMIN --device /dev/net/tun \
 --sysctl net.ipv6.conf.all.disable_ipv6=0 \
 -e OVPNCFG='myconnection.ovpn' \
 -e OVPNSLEEPTIME='9' \
