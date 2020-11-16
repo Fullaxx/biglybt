@@ -70,7 +70,7 @@ Default: same as VNCUSER and VNCUID
 ```
 -e VNCGROUP='users'
 ```
-Optional: Set a custom group for non-root user \
+Optional: Define a new group for non-root user \
 Default: same as VNCUSER and VNCUID
 ```
 -e VNCGROUP='guests' -e VNCGID='1001'
