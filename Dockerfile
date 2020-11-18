@@ -22,19 +22,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
-# Install BiglyBT
-RUN wget -q https://files.biglybt.com/installer/BiglyBT_Installer.sh \
-      -O /app/BiglyBT_Installer.sh && chmod +x /app/BiglyBT_Installer.sh && \
-    USER="root" app_java_home="/usr/lib/jvm/java-11-openjdk-amd64/" /app/BiglyBT_Installer.sh -q && \
-    rm /app/BiglyBT_Installer.sh
-
-# ------------------------------------------------------------------------------
 # Provide default BiglyBT config
 COPY conf/biglybt.config /usr/share/biglybt/biglybt.config.default
 
 # ------------------------------------------------------------------------------
 # Install startup scripts
 COPY app/*.sh /app/
+COPY conf/autostart /usr/share/ubuntu-desktop/openbox/
 
 # ------------------------------------------------------------------------------
 # Identify Volumes

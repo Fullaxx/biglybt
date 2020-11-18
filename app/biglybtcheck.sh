@@ -17,12 +17,6 @@ if [ ! -r ${HOME}/.biglybt/biglybt.config ]; then
   cp /usr/share/biglybt/biglybt.config.default ${HOME}/.biglybt/biglybt.config
 fi
 
-if ! grep '/usr/local/biglybt/biglybt' ${HOME}/.config/openbox/autostart ; then
-  echo >> ${HOME}/.config/openbox/autostart
-  echo "/usr/local/biglybt/biglybt &" >> ${HOME}/.config/openbox/autostart
-fi
-
-# /usr/local/biglybt is necessary for auto-update to work correctly
 if [ -n "${USER}" ]; then
-  chown -R ${USER}.${GROUP} ${HOME} /usr/local/biglybt /in /out
+  chown -R ${USER}.${GROUP} ${HOME} /in /out
 fi

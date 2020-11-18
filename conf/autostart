@@ -1,0 +1,30 @@
+#
+# This script will run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# if VNCUMASK was set at docker cmdline
+# make sure we set umask here also during autostart
+if [ -n "${VNCUMASK}" ]; then
+  umask "${VNCUMASK}"
+# touch /tmp/TEST (test case should show umask taking affect)
+fi
+
+# https://github.com/jessfraz/dockerfiles/issues/4
+xhost local:root
+
+fbpanel &
+
+if [ -n "${WALLPAPER}" ]; then
+  /usr/bin/set_wallpaper.sh ${WALLPAPER} ${WPLAYOUT}
+fi
+
+### If you want to see the BiglyBT Installer uncomment the following line:
+# BBTMANUALINSTALL="1"
+
+if [ "${BBTMANUALINSTALL}" = "1" ]; then
+  /app/scripts/biglybt.sh NOQUIET &
+else
+  /app/scripts/biglybt.sh &
+fi
