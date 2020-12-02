@@ -91,7 +91,7 @@ Default: 0022
 
 ## OpenVPN Options
 Optional: Wait 9 seconds for openvpn to initiate and connect before moving on \
-Default: 5 seconds
+Default: 6 seconds
 ```
 -e OVPNSLEEPTIME='9'
 ```
