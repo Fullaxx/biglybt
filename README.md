@@ -180,3 +180,9 @@ vncviewer 127.0.0.1:5901
 ```
 docker build -t="fullaxx/biglybt" github.com/Fullaxx/biglybt
 ```
+
+## Posting Issues on Github
+When posting issues, please provide the following:
+* docker run line used to create the container
+* output from docker logs
+* screenshot showing the issue if not described in logs
