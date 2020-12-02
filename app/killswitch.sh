@@ -5,5 +5,7 @@ if [ -n "${LOGFILE}" ]; then
   echo "${TIMESTAMP}: KILLSWITCH ACTIVATED" >> /out/${LOGFILE}
 fi
 
+if [ "${OVPNKS}" == "ACTIVE" ]; then
 # ps ax | grep -v grep | grep 'BiglyBT.jar' | awk '{print $1}' | xargs kill
-pkill java
+  pkill java
+fi

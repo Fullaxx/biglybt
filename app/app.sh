@@ -12,7 +12,9 @@ source /app/imagestart.sh
 
 if [ x"${OVPNCFG}" != "x" ]; then
   /app/openvpn.sh || bail "openvpn startup failed!"
-  /app/monitor.sh &
+  if [ x"${OVPNKS}" != "x" ]; then
+    /app/monitor.sh &
+  fi
 fi
 
 source /app/tiger.sh
