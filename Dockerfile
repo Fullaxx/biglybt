@@ -28,7 +28,7 @@ COPY conf/biglybt.config /usr/share/biglybt/biglybt.config.default
 # ------------------------------------------------------------------------------
 # Install startup scripts
 COPY app/*.sh /app/
-COPY conf/autostart /usr/share/ubuntu-desktop/openbox/
+COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 
 # ------------------------------------------------------------------------------
 # Identify Volumes
