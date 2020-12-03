@@ -186,3 +186,4 @@ When posting issues, please provide the following:
 * docker run line used to create the container
 * output from docker logs
 * screenshot showing the issue if not described in logs
+* If OpenVPN related: read [OPENVPN.md](https://github.com/Fullaxx/biglybt/blob/master/OPENVPN.md) and provide contents of /var/log/openvpn/openvpn.log
