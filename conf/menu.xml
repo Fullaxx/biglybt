@@ -144,6 +144,7 @@
 	<item label="xterm"><action name="Execute"><command>xterm</command></action></item>
 	<separator label="Status" />
 	<item label="External IP"><action name="Execute"><command>/app/display_IP.sh</command></action></item>
+	<item label="My Network"><action name="Execute"><command>/app/display_NET.sh</command></action></item>
 	<item label="OpenVPN Log"><action name="Execute"><command>/app/display_OL.sh</command></action></item>
 	<separator label="Applications" />
 	<menu id="apps-terminals-menu"/>
