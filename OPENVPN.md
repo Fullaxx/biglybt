@@ -27,7 +27,12 @@ When binding your VNC session to your host, make sure to follow the examples whi
 
 ## Disabling IPv6
 In some cases, it might be necessary to disable IPv6 inside the container. \
-Run docker with the following options if required:
+If you see a log message that looks like this:
+```
+Wed Jan 1 09:06:57 2020 /sbin/ip -6 addr add XXXX:XXXX:XXXX::XXXX/64 dev tun0 RTNETLINK answers: Permission denied
+Wed Jan 1 09:06:57 2020 Linux ip -6 addr add failed: external program exited with error status: 2
+```
+Run docker with the following options:
 ```
 --sysctl net.ipv6.conf.all.disable_ipv6=0
 ```
