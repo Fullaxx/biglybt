@@ -176,6 +176,9 @@ docker run -d \
 vncviewer 127.0.0.1:5901
 ```
 
+## Connect using noVNC and a web browser
+Check out [noVNC](https://hub.docker.com/r/fullaxx/novnc) to access your biglybt container with a web browser
+
 ## Build it locally using the github repository
 ```
 docker build -t="fullaxx/biglybt" github.com/Fullaxx/biglybt
