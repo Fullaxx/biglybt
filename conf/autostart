@@ -18,6 +18,8 @@ fbpanel &
 
 if [ -n "${WALLPAPER}" ]; then
   /usr/bin/set_wallpaper.sh ${WALLPAPER} ${WPLAYOUT}
+else
+  hsetroot -solid "#333333"
 fi
 
 ### If you want to see the BiglyBT Installer uncomment the following line:
