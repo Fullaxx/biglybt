@@ -7,9 +7,10 @@
 [BiglyBT](https://www.biglybt.com/) - A java-based bittorrent application \
 [openvpn](https://openvpn.net/)
 
-## Get the image from Docker Hub
+## Get the image from Docker Hub or build it locally
 ```
 docker pull fullaxx/biglybt
+docker build -t="fullaxx/biglybt" github.com/Fullaxx/biglybt
 ```
 
 ## Volume Options
@@ -171,17 +172,11 @@ docker run -d \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
 
-## Connect using vncviewer
+## Connect using vncviewer or a web browser
+Use any standard VNC client to connect directly \
+For web access, Check out [noVNC](https://hub.docker.com/r/fullaxx/novnc) to access your biglybt container with a web browser
 ```
 vncviewer 127.0.0.1:5901
-```
-
-## Connect using noVNC and a web browser
-Check out [noVNC](https://hub.docker.com/r/fullaxx/novnc) to access your biglybt container with a web browser
-
-## Build it locally using the github repository
-```
-docker build -t="fullaxx/biglybt" github.com/Fullaxx/biglybt
 ```
 
 ## Posting Issues on Github
