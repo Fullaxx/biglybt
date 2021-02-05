@@ -174,7 +174,7 @@ docker run -d \
 
 ## Connect using vncviewer or a web browser
 Use any standard VNC client to connect directly \
-For web access, Check out [noVNC](https://hub.docker.com/r/fullaxx/novnc) to access your biglybt container with a web browser
+For web access, check out [noVNC](https://hub.docker.com/r/fullaxx/novnc) to access your biglybt container with a web browser
 ```
 vncviewer 127.0.0.1:5901
 ```
