@@ -40,6 +40,15 @@ Also, if biglybt.config is found in /config, it will be copied to $HOME/.biglybt
 `-- processing - BiglyBT will use this for processing incomplete downloads
 ```
 
+## JAVA Options
+Optional: Choose a different version of Java \
+Default: 11
+```
+-e BBTJAVAVERS='8'
+-e BBTJAVAVERS='11'
+-e BBTJAVAVERS='17'
+```
+
 ## VNC Options
 Optional: Set Depth 16 \
 Default: 24

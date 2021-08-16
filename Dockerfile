@@ -9,15 +9,11 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C
 
 # ------------------------------------------------------------------------------
-# Install prerequisites (openjdk,openvpn) and clean up
+# Install prerequisites and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      openjdk-11-jre-headless \
       openvpn \
-      tree \
-      webkit2gtk-driver && \
-    sed -e 's/^assistive_technologies/#assistive_technologies/' \
-      -i /etc/java-11-openjdk/accessibility.properties && \
+      tree && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
