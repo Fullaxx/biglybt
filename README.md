@@ -134,7 +134,7 @@ Thanks to [jlesage](https://hub.docker.com/r/jlesage/firefox/#increasing-shared-
 ## Persistant Configuration
 Examples of how to keep your configuration persistant
 ```
--v /srv/docker/biglybt/home/biglyby:/root/.biglyby
+-v /srv/docker/biglybt/home/biglybt:/root/.biglybt
 -v /srv/docker/biglybt/home/mozilla:/root/.mozilla
 ```
 
