@@ -9,8 +9,8 @@
 
 ## Get the image from Docker Hub or build it locally
 ```
-docker pull fullaxx/biglybt
-docker build -t="fullaxx/biglybt" github.com/Fullaxx/biglybt
+docker pull fullaxx/biglybt:bionic
+docker build -t="fullaxx/biglybt:bionic" github.com/Fullaxx/biglybt#bionic
 ```
 
 ## Volume Options
