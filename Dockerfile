@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # Pull base image
-FROM fullaxx/ubuntu-desktop
+FROM fullaxx/ubuntu-desktop:bionic
 MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 
 # ------------------------------------------------------------------------------
