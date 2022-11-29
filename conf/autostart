@@ -22,11 +22,4 @@ else
   hsetroot -solid "#333333"
 fi
 
-### If you want to see the BiglyBT Installer uncomment the following line:
-# BBTMANUALINSTALL="1"
-
-if [ "${BBTMANUALINSTALL}" = "1" ]; then
-  /app/scripts/biglybt.sh NOQUIET &
-else
-  /app/scripts/biglybt.sh &
-fi
+/app/scripts/biglybt.sh &
