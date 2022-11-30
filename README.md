@@ -49,6 +49,13 @@ Default: 11
 -e BBTJAVAVERS='17'
 ```
 
+## BiglyBT Installer Options
+Optional: Disable the automated quiet install \
+Default: automatic quiet install
+```
+-e BBTGUIINSTALL='1'
+```
+
 ## VNC Options
 Optional: Set Depth 16 \
 Default: 24
