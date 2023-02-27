@@ -28,8 +28,7 @@ COPY conf/autostart conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 
 # ------------------------------------------------------------------------------
 # Identify Volumes
-VOLUME /in
-VOLUME /out
+VOLUME /data
 
 # ------------------------------------------------------------------------------
 # Expose ports

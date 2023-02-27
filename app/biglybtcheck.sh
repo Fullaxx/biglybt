@@ -1,10 +1,10 @@
 #!/bin/bash
 
-mkdir -p /in/autoload
-mkdir -p /in/torrents
-mkdir -p /out/torrents
-mkdir -p /out/complete
-mkdir -p /out/processing
+mkdir -p /data/in/autoload
+mkdir -p /data/in/torrents
+mkdir -p /data/out/torrents
+mkdir -p /data/out/complete
+mkdir -p /data/out/processing
 mkdir -p ${HOME}/.biglybt
 
 # if we have a new BiglyBT config file (/config/biglybt.config) use it
@@ -18,5 +18,5 @@ if [ ! -r ${HOME}/.biglybt/biglybt.config ]; then
 fi
 
 if [ -n "${USER}" ]; then
-  chown -R ${USER}.${GROUP} ${HOME} /in /out
+  chown -R ${USER}:${GROUP} ${HOME} /data
 fi

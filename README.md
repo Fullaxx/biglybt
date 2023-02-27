@@ -14,13 +14,10 @@ docker build -t="fullaxx/biglybt" github.com/Fullaxx/biglybt
 ```
 
 ## Volume Options
-Input: Drop your torrents/magnets in /srv/docker/biglybt/in/autoload/
+Input: Drop your torrents/magnets in /srv/docker/biglybt/data/in/autoload \
+Output: Your downloads will reside in /srv/docker/biglybt/data/out/complete
 ```
--v /srv/docker/biglybt/in:/in
-```
-Output: Your downloads will reside in /srv/docker/biglybt/out/complete/
-```
--v /srv/docker/biglybt/out:/out
+-v /srv/docker/biglybt/data:/data
 ```
 Configuration: Any .ovpn files must be placed in /srv/docker/biglybt/config/ \
 Also, if biglybt.config is found in /config, it will be copied to $HOME/.biglybt/ and used
@@ -28,16 +25,16 @@ Also, if biglybt.config is found in /config, it will be copied to $HOME/.biglybt
 -v /srv/docker/biglybt/config:/config
 ```
 
-## BiglyBT Dir Tree
+## BiglyBT Directory Tree
 ```
-/in
-|-- autoload - Drop your torrents/magnets here
-`-- torrents - BiglyBT will move torrent files here after autoload input
-
-/out
-|-- complete - Downloads will be moved here upon completion
-|-- torrents - BiglyBT will move torrent files of finished downloads here
-`-- processing - BiglyBT will use this for processing incomplete downloads
+/data
+|-- /in
+|   |-- autoload - Drop your torrents/magnets here
+|   `-- torrents - BiglyBT will move torrent files here after autoload input
+`-- /out
+    |-- complete - Downloads will be moved here upon completion
+    |-- torrents - BiglyBT will move torrent files of finished downloads here
+    `-- processing - BiglyBT will use this for processing incomplete downloads
 ```
 
 ## JAVA Options
@@ -149,18 +146,16 @@ Examples of how to keep your configuration persistant
 Run the image keeping your biglybt configuration
 ```
 docker run -d \
--v /srv/docker/biglybt/data:/root/.biglybt \
--v /srv/docker/biglybt/in:/in \
--v /srv/docker/biglybt/out:/out \
+-v /srv/docker/biglybt/bbtconfig:/root/.biglybt \
+-v /srv/docker/biglybt/data:/data \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
 Run the image as a non-root user
 ```
 docker run -d \
 -e VNCUSER='guest' -e VNCUID='1000' \
--v /srv/docker/biglybt/data:/home/guest/.biglybt \
--v /srv/docker/biglybt/in:/in \
--v /srv/docker/biglybt/out:/out \
+-v /srv/docker/biglybt/bbtconfig:/home/guest/.biglybt \
+-v /srv/docker/biglybt/data:/data \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
 Run the image as a non-root user with custom group
@@ -168,9 +163,8 @@ Run the image as a non-root user with custom group
 docker run -d \
 -e VNCUSER='guest' -e VNCUID='1000' \
 -e VNCGROUP='guests' -e VNCGID='1001' \
--v /srv/docker/biglybt/data:/home/guest/.biglybt \
--v /srv/docker/biglybt/in:/in \
--v /srv/docker/biglybt/out:/out \
+-v /srv/docker/biglybt/bbtconfig:/home/guest/.biglybt \
+-v /srv/docker/biglybt/data:/data \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
 Run the image with OpenVPN \
@@ -182,8 +176,7 @@ docker run -d \
 -e OVPNCFG='myconnection.ovpn' \
 -e OVPNSLEEPTIME='9' \
 -e LOGFILE='mylog' \
--v /srv/docker/biglybt/in:/in \
--v /srv/docker/biglybt/out:/out \
+-v /srv/docker/biglybt/data:/data \
 -v /srv/docker/biglybt/config:/config \
 -p 127.0.0.1:5901:5901 fullaxx/biglybt
 ```
