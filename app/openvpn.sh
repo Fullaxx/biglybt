@@ -12,8 +12,8 @@ CONFIGFILE="/config/${OVPNCFG}"
 rm -f /var/log/openvpn/openvpn.log
 
 if [ ! -r ${CONFIGFILE} ]; then bail "${CONFIGFILE} not available!"; fi
-openvpn --config ${CONFIGFILE} --daemon --script-security 2 \
-  --log /var/log/openvpn/openvpn.log --up /app/up.sh --down /app/down.sh
+(cd /config && openvpn --config "${OVPNCFG}" --daemon --script-security 2 \
+  --log /var/log/openvpn/openvpn.log --up /app/up.sh --down /app/down.sh)
 
 echo "Sleeping ${OVPNSLEEPTIME}s while we wait for openvpn to settle ..."
 sleep ${OVPNSLEEPTIME}
@@ -28,7 +28,7 @@ if grep -q 'Exiting due to fatal error' /var/log/openvpn/openvpn.log; then
   bail "openvpn is not running!"
 fi
 
-OVPID=`ps aux | grep -w openvpn | grep ${CONFIGFILE} | awk '{print $2}'`
+OVPID=`ps aux | grep -w openvpn | grep ${OVPNCFG} | awk '{print $2}'`
 if [ x"${OVPID}" == "x" ]; then
   tail -n 10 /var/log/openvpn/openvpn.log
   bail "openvpn is not running!"
